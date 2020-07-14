@@ -18,8 +18,7 @@ file = jldopen("mydata.jld", "w")
 @write file A
 close(file)
 ```
-This creates a dataset named `"A"` containing the contents of the variable `A`.
-There are also the convenient `save("mydata.jld", "A", A)` or `@save "mydata.jld" A` [syntaxes](../README.md).
+This creates a dataset named `"A"` containing the contents of the variable `A`. There are also the convenient `save("mydata.jld", "A", A)` or `@save "mydata.jld" A` [syntaxes](../README.md).
 
 You may also use an array like syntax
 ```julia
@@ -69,7 +68,7 @@ By default, this uses [Blosc](http://www.blosc.org/) compression, which imposes
 very little performance penalty, but leads to HDF5 files that are not readable
 by other applications unless a Blosc plugin is installed.
 If you also specify `compatible=true`, then a different (and often slower)
-compression method is used that should be readabye by any HDF5-using software.
+compression method is used that should be readable by any HDF5-using software.
 
 JLD files can be opened with the `mmaparrays` option, which if true returns "qualified" array data sets as arrays using [memory-mapping](https://github.com/JuliaIO/HDF5.jl/blob/master/doc/hdf5.md#memory-mapping):
 
